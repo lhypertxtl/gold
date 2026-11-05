@@ -1,0 +1,48 @@
+# Entorno y secretos (NUNCA versionar)
+.env
+.env.*
+!.env.example
+
+# Sesiones de Telegram (Telethon MTProto)
+*.session
+*.session-journal
+*.session-shm
+*.session-wal
+secrets/
+.secrets/
+
+# Bases de datos y datos locales
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+data/*
+!data/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend / Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+
+# Sistema Operativo / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
