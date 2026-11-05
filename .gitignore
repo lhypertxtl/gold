@@ -37,6 +37,7 @@ htmlcov/
 node_modules/
 frontend/dist/
 frontend/.vite/
+*.tsbuildinfo
 *.log
 npm-debug.log*
 
