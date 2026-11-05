@@ -1,0 +1,18 @@
+[Unit]
+Description=Gold Signals Web API & Dashboard (FastAPI)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/gold/backend
+EnvironmentFile=/var/www/gold/.env
+ExecStart=/var/www/gold/backend/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010 --proxy-headers --forwarded-allow-ips="127.0.0.1"
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

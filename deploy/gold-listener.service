@@ -1,0 +1,19 @@
+[Unit]
+Description=Gold Signals Telegram Read-Only Listener & Price Evaluator (Telethon)
+After=network-online.target gold-web.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/gold/backend
+EnvironmentFile=/var/www/gold/.env
+ExecStart=/var/www/gold/backend/.venv/bin/python -m app.listener
+Restart=always
+RestartSec=15
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
